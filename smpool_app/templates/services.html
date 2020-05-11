@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{%block title%}
+<title> my Services </title>
+{%endblock title%}
+
+{%block content%}
+   {% for message in messages %}
+    <div class="alert alert-info alert-dismissible fade show" role ="alert">
+    {{ message }}
+     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+    </div>
+    {% endfor %}
+<form method = "POST" class = "row">
+{% csrf_token %}
+        <input type="text" class="form-control col-lg-4" name = "service_desc" >
+        <input type="text" class="form-control col-lg-4" name = "service_cost"  >
+        <button type="submit" class="btn btn-primary col-lg-2">add Services</button>
+    </form>
+<table class="table table-bordered">
+  <thead class= "thread-dark">
+    <tr>
+      <th scope="col">service Description</th>
+      <th scope="col">Edit</th>
+      <th scope="col">service Cost</th>
+      <th scope="col" >Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for obj in all_services %}
+  
+    <tr>
+      <th scope="row">{{obj.service_desc}}</th>
+      <td><a href="{% url 'edit_services' obj.id %}">Edit</a></td>
+      <td>{{obj.service_cost}}</td>
+      <td><a href="{% url 'delete_service' obj.id %}">Delete</a></td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-end">
+    <li class="page-item "><a class="page-link" href="?pg=1"><<</a></li>
+    {% if all_services.has_previous %}
+    <li class="page-item"><a class="page-link" href="?pg={{all_services.previous_page_number }}">{{all_services.previous_page_number}}</a></li>
+    {% endif %}
+    <li class="page-item"><a class="page-link" href="?pg={{ all_services.number }}">{{all_services.number}}</a></li>
+    {%if all_services.has_next %}
+    <li class="page-item"><a class="page-link" href="?pg={{ all_services.next_page_number }}">{{ all_services.next_page_number }}</a></li>
+    {% endif %}
+    <li class="page-item"><a class="page-link" href="pg={{ all_services.paginator.num_pages }}">>></a></li>
+  </ul>
+</nav>
+
+{%endblock content%}
+

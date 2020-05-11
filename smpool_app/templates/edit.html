@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{%block title%}
+<title> Edit Services </title>
+{%endblock title%}
+
+{%block content%}
+<div class = "container">
+<h1></h1>{{service_obj.service_id}}
+
+<form method = "POST" class = "row">
+{% csrf_token %}
+ {% if service_obj.manage=request.user%}
+        <input type="text" class="form-control col-lg-4" name = "service_desc" placeholder ="{{service_obj.service_desc}}" value ="{{service_obj.service_desc}}">
+        <input type="text" class="form-control col-lg-4" name = "service_cost"  placeholder ="{{service_obj.service_cost}}" value ="{{service_obj.service_cost}}">
+        <button type="submit" class="btn btn-primary col-lg-2">edit Services</button>
+{% else %}
+<p> restricted</p>
+{% endif %}
+</form>
+</div>
+{%endblock content%}
