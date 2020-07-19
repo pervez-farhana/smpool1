@@ -1319,6 +1319,8 @@ def about(request):
     return render(request,'about.html',context)    
 
 def index(request):
+    context = {'slide1_text': "Swimming to contact",
+                }
     slider =website_content_info.objects.filter(body_pos__contains = 'slider_text')
     for objcon in slider:
         slider_title=objcon.body_title
