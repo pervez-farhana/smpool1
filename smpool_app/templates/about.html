@@ -1,11 +1,25 @@
-{% extends 'base.html' %}
+<!doctype html>
+<html lang="en">
+  <head>
+	{% extends 'base.html' %}
 
-{%block title%}
-<title> About Us </title>
-{%endblock title%}
+    {%block title%}
+        <title> contact us </title>
+    {%endblock title%}
+</head>
+<body>
+    {%block content%}
+        <h3>{{contact_title}} </h3>
+        <pre>
+            <p>{{contact_text}}</p>
+        </pre>
+        <h3>{{contact_title2}}</h3>
 
-{%block content%}
-<div class = "container">
-<h1>{{about_text}}</h1>
-</div>
-{%endblock content%}
+        <pre>
+            <p>{{contact_text2}}</p>
+        </pre>
+
+    {%endblock content%}
+</body>
+
+</html>

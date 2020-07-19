@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{%block title%}
+<title> search your service </title>
+{%endblock title%}
+
+{%block content%}
+<div class = "container">
+<h1>
+</h1>{{profile_text}}
+</div>
+{%endblock content%}
+
+<form >
+{% csrf_token %}
+       
+
+
+    </form>
+
+
+<div id ="search_result"></div>
+<script>
+var delayTimer:
+$('#id_search_term').keyup(function(){
+    clearTimeout(delayTimer);
+    $('#search_result').text('loading');
+    delatTimer= setTimeout(function(){
+        $.ajax({
+            url:'/ssearch.html',
+            data : {
+                'search_term':text
+                },
+            dataType: 'json',
+            success: function(data){
+                var results ='';
+                $('#search_result').text('');
+                results += '<dev class="row">';
+                results += '<div class ="col-md-4 mt-3"><div class ="card mb-4 shadow-sm">';
+                rsults += '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + video[id][videoId]+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                results += '<div class ="card-body"><p class="card-text">' + video[snippet][title] + '</p>';
+                results += '<a href ="#" class ="btn-primary" onclick ="addvideo()">Add</a></div></div></div>';
+                
+                 $('#search_result').append(results);
+                });
+                results += '</div>'
+
+}
+
+});
+
+},1000);
+
+});
+
+
+
+
+
+
+
+</script>
+
+

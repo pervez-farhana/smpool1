@@ -1,11 +1,676 @@
-{% extends 'base.html' %}
 
-{%block title%}
-<title> welcome </title>
-{%endblock title%}
+<!DOCTYPE html>
+<html lang="en">
 
-{%block content%}
-<div class = "container">
-<h1>{{index_text}}</h1>
-</div>
-{%endblock content%}
+<head>
+	{% block title%}
+	<title> Swimming pool Service Company </title>
+	{% endblock title%}
+	
+	<!-- custom-theme -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Need to add later" />
+
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //custom-theme -->
+	<link href="static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- //custom-theme -->
+	<!-- font-awesome-icons -->
+	<link href="static/css/font-awesome.css" rel="stylesheet">
+	<!-- //font-awesome-icons -->
+	<link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Montserrat:200,200i,300,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+<!-- added from job site -->
+    <link rel="shortcut icon" href="static/assets/img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <!--
+		<link rel="stylesheet" href="static/assets/css/bootstrap.min.css" type="text/css">    
+    <link rel="stylesheet" href="static/assets/css/jasny-bootstrap.min.css" type="text/css">  
+    <link rel="stylesheet" href="static/assets/css/bootstrap-select.min.css" type="text/css">  
+	-->
+	<!-- Material CSS 
+    <link rel="stylesheet" href="static/assets/css/material-kit.css" type="text/css">
+	-->
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="static/assets/fonts/font-awesome.min.css" type="text/css"> 
+    <link rel="stylesheet" href="static/assets/fonts/themify-icons.css"> 
+
+    <!-- Animate CSS 
+    <link rel="stylesheet" href="static/assets/extras/animate.css" type="text/css">
+	-->
+    <!-- Owl Carousel 
+    <link rel="stylesheet" href="static/assets/extras/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="static/assets/extras/owl.theme.css" type="text/css">
+-->
+    <!-- Rev Slider CSS 
+    <link rel="stylesheet" href="static/assets/extras/settings.css" type="text/css"> 
+	-->
+    <!-- Slicknav js -->
+    <link rel="stylesheet" href="static/assets/css/slicknav.css" type="text/css">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="static/assets/css/main.css" type="text/css">
+    <!-- Responsive CSS Styles -->
+    <link rel="stylesheet" href="static/assets/css/responsive.css" type="text/css">
+
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="static/assets/css/colors/red.css" media="screen" />
+    
+</head>
+
+<body>
+	<!-- banner -->
+	<div class="banner_top" id="home">
+		<div data-vide-bg="static/video/sunrise_cartoon">
+			<div class="center-container">
+				<!-- top_header_agile_info_w3ls -->
+				<div class="top_header_agile_info_w3ls">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header navbar-left">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							<h1><a class="navbar-brand" href="/"><span>ITB</span>IT Bangla</a></h1>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+							<div class="w3l_header_left">
+								<ul>
+									<li><a class="sign" href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-user" aria-hidden="true"></i></a>										</li>
+
+									<li><i class="fa fa-phone" aria-hidden="true"></i> +88099999999</li>
+									<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:pervez.farhana@outlook.com">info@itbangla.net</a></li>
+								</ul>
+							</div>
+							<div class="clearfix"> </div>
+
+							<div id="m_nav_container" class="m_nav wthree_bg">
+								<nav class="menu menu--sebastian">
+									<ul id="m_nav_list" class="m_nav menu__list">
+									<!--	<li class="m_nav_item active" id="m_nav_item_1"> <a href="index.html" class="link link--kumya"><i class="fa fa-home" aria-hidden="true"></i><span data-letters="Home">Home</span></a></li>
+									-->
+									<!-- Aboutus -->	
+										<li class="m_nav_item dropdown" id="moble_nav_item_2">
+											<a href="#" class="dropdown-toggle link link--kumya" data-toggle="dropdown"><i class="fa fa-file-text-o" aria-hidden="true"></i><span data-letters="About Us">About Us<b class="caret"></b></a>
+											<ul class="dropdown-menu agile_short_dropdown">
+												{%for obj in aumenu %}
+												<li><a href="{{obj.menu_desc}}">{{obj.submenu_name}}</a></li>
+												{% endfor %}
+											</ul>
+										</li>
+									
+									<!-- training -->	
+										<li class="m_nav_item dropdown" id="moble_nav_item_2">
+											<a href="#" class="dropdown-toggle link link--kumya" data-toggle="dropdown"><i class="fa fa-file-text-o" aria-hidden="true"></i><span data-letters="Training Academy">Training Academy<b class="caret"></b></a>
+											<ul class="dropdown-menu agile_short_dropdown">
+												{%for obj in tamenu %}
+												<li><a href="{{obj.menu_desc}}">{{obj.submenu_name}}</a></li>
+												{% endfor %}
+											</ul>
+										</li>
+									<!-- testing -->	
+										<li class="m_nav_item dropdown" id="moble_nav_item_2">
+											<a href="#" class="dropdown-toggle link link--kumya" data-toggle="dropdown"><i class="fa fa-file-text-o" aria-hidden="true"></i><span data-letters="Testing Center">Testing Center<b class="caret"></b></a>
+											<ul class="dropdown-menu agile_short_dropdown">
+												{%for obj in tcmenu %}
+												<li><a href="{{obj.menu_desc}}">{{obj.submenu_name}}</a></li>
+												{% endfor %}
+											</ul>
+										</li>
+									<!-- software -->	
+										<li class="m_nav_item dropdown" id="moble_nav_item_2">
+											<a href="#" class="dropdown-toggle link link--kumya" data-toggle="dropdown"><i class="fa fa-file-text-o" aria-hidden="true"></i><span data-letters="Software">Software<b class="caret"></b></a>
+											<ul class="dropdown-menu agile_short_dropdown">
+												{%for obj in smenu %}
+												<li><a href="{{obj.menu_desc}}">{{obj.submenu_name}}</a></li>
+												{% endfor %}
+											</ul>
+										</li>
+									<!-- security Course -->	
+										<li class="m_nav_item dropdown" id="moble_nav_item_2">
+											<a href="#" class="dropdown-toggle link link--kumya" data-toggle="dropdown"><i class="fa fa-file-text-o" aria-hidden="true"></i><span data-letters="security Course">Security Course<b class="caret"></b></a>
+											<ul class="dropdown-menu agile_short_dropdown">
+												{%for obj in scmenu %}
+												<li><a href="{{obj.menu_desc}}">{{obj.submenu_name}}</a></li>
+												{% endfor %}
+											</ul>
+										</li>
+										<!-- 
+										<li class="m_nav_item" id="moble_nav_item_3"> <a href="career.html" class="link link--kumya"><i class="fa fa-info-circle" aria-hidden="true"></i><span data-letters="Careers">careers</span></a></li>
+										-->
+										<!-- placement  -->	
+										<li class="m_nav_item dropdown" id="moble_nav_item_2">
+											<a href="#" class="dropdown-toggle link link--kumya" data-toggle="dropdown"><i class="fa fa-file-text-o" aria-hidden="true"></i><span data-letters="Placement">Placement<b class="caret"></b></a>
+											<ul class="dropdown-menu agile_short_dropdown">
+												{%for obj in jpmenu %}
+												<li><a href="{{obj.menu_desc}}">{{obj.submenu_name}}</a></li>
+												{% endfor %}
+											</ul>
+										</li>
+										
+										<li class="m_nav_item" id="moble_nav_item_6"> <a href="contact.html" class="link link--kumya"><i class="fa fa-envelope-o" aria-hidden="true"></i><span data-letters="Contact">Contact</span></a></li>
+
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</nav>
+				</div>
+
+				<!--// top_header_agile_info_w3ls -->
+				<!--/slider-->
+				<div class="banner_wthree_agile_info">
+					<div class="slider">
+						<div class="callbacks_container">
+							<ul class="rslides callbacks callbacks1" id="slider4">
+								<li>
+									<div class="agileits-banner-info">
+		
+										<h4>{{title_text1}}</h4>
+										<h3>{{body_text1}}</h3>
+										<p>{{subtitle_text1}}</p>
+										<div class="more">
+											<a href="single.html" class="hvr-shutter-in-vertical"> Read More<span class="glyphicon glyphicon-arrow-right"></span></a>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="agileits-banner-info">
+										<h4>{{title_text2}}</h4>
+										<h3>{{body_text2}}</h3>
+										<p>{{subtitle_text2}}</p>
+										<div class="more">
+											<a href="single.html" class="hvr-shutter-in-vertical">Read More <span class="glyphicon glyphicon-arrow-right"></span></a>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="agileits-banner-info">
+										<h4>{{title_text3}}</h4>
+										<h3>{{body_text3}}</h3>
+										<p>{{subtitle_text3}}</p>
+								
+										<div class="more">
+											<a href="single.html" class="hvr-shutter-in-vertical">Read More <span class="glyphicon glyphicon-arrow-right"></span></a>
+										</div>
+								
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--//slider-->
+			</div>
+		</div>
+	</div>
+	<!-- //banner -->
+	<!-- Modal1                                                                 signin-->
+	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+					<div class="signin-form profile">
+						<h3 class="agileinfo_sign">Sign In</h3>
+						<div class="login-form">
+							<form action="#" method="post">
+								<input type="email" name="email" placeholder="E-mail" required="">
+								<input type="password" name="password" placeholder="Password" required="">
+								<div class="tp">
+									<input type="submit" value="Sign In">
+								</div>
+							</form>
+						</div>
+						<div class="login-social-grids">
+							<ul>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-rss"></i></a></li>
+							</ul>
+						</div>
+						<p><a href="#" data-toggle="modal" data-target="#myModal3"> Don't have an account?</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //Modal1 -->
+	<!-- Modal2                                                     sign up or register-->
+	<div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+					<div class="signin-form profile">
+						<h3 class="agileinfo_sign">Sign Up</h3>
+						<div class="login-form">
+							<form action="#" method="post">
+								<input type="text" name="name" placeholder="Username" required="">
+								<input type="email" name="email" placeholder="Email" required="">
+								<input type="password" name="password" placeholder="Password" required="">
+								<input type="password" name="password" placeholder="Confirm Password" required="">
+								<input type="submit" value="Sign Up">
+							</form>
+						</div>
+						<p><a href="#"> By clicking register, I agree to your terms</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //Modal2 -->
+
+	<!-- banner-bottom -->
+	<div class="banner-bottom">
+		<div class="container">
+			<div class="col-md-7 banner_bottom_left">
+								
+			
+				<p><i>{{welcome_title}} </i> {{welcome_text}}</p>
+				<div class="more wthree_more1 ">
+					<a href="index.html" class="hvr-shutter-in-vertical" data-toggle="modal" data-target="#myModal">Read More<span class="glyphicon glyphicon-arrow-right"></span></a>
+				</div>
+			</div>
+			<div class="col-md-5 banner_bottom_right">
+					<div class="img_agile">
+					<img src="static/images/welcome.png" class="img-responsive" alt="" />
+				</div>
+
+
+			</div>
+
+			<div class="clearfix"> </div>
+			<div class="banner_bottom_agile_grids">
+				<div class="wthree_banner_bottom_right_grids">
+					<div class="col-md-3 banner_bottom_right_grid">
+						<div class="view view-tenth">
+							<div class="agile_text_box">
+								<i class="fa fa-eye" aria-hidden="true"></i>
+								<h3>Voice to our customer</h3>
+								<p> Our goal is to satisfy our customer through our outstanding service</p>
+							</div>
+							<div class="mask">
+								<img src="static/images/g1.jpg" class="img-responsive" alt="" />
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 banner_bottom_right_grid">
+						<div class="view view-tenth">
+							<div class="agile_text_box">
+								<i class="fa fa-building-o" aria-hidden="true"></i>
+								<h3>Effeciency</h3>
+								<p>effecient service assurance</p>
+							</div>
+							<div class="mask">
+								<img src="static/images/g2.jpg" class="img-responsive" alt="" />
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-3 banner_bottom_right_grid">
+						<div class="view view-tenth">
+							<div class="agile_text_box">
+								<i class="fa fa-eraser" aria-hidden="true"></i>
+								<h3>High quality service</h3>
+								<p>Ensure customer satisfaction through our best and unique service</p>
+							</div>
+							<div class="mask">
+								<img src="static/images/g3.jpg" class="img-responsive" alt="" />
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 banner_bottom_right_grid">
+						<div class="view view-tenth">
+							<div class="agile_text_box">
+								<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+								<h3>Innovation</h3>
+								<p>Continous improve our process for our customer</p>
+							</div>
+							<div class="mask">
+								<img src="static/images/g4.jpg" class="img-responsive" alt="" />
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- banner-bottom -->
+	<div class="services">
+		<div class="container">
+			<h3 class="title-w3-agileits two">Services We offer</h3>
+			<p class="quia">What We Do</p>
+			<div class="wthree_services_bottom_left banner_bottom_agile_grids">
+				<div class="wthree_services_bottom_left_grid">
+					<div class="col-md-4 w3_agileits_services_bottom_l_grid">
+						<div class="agile_services_bottom_l_grid1">
+							<img src="static/images/a44.jpg" alt=" " class="img-responsive" />
+							<div class="w3_service_bottom_grid_pos">
+								<h3>Software</h3>
+							</div>
+						</div>
+						<div class="serve_info_agile two">
+							<h4>IT Bangla Ltd</h4>
+							<p>Software development</p>
+						</div>
+					</div>
+					<div class="col-md-4 w3_agileits_services_bottom_l_grid">
+						<div class="agile_services_bottom_l_grid1">
+							<img src="static/images/a22.jpg" alt=" " class="img-responsive" />
+							<div class="w3_service_bottom_grid_pos">
+								<h3>IDB Scholarship Program</h3>
+							</div>
+						</div>
+						<div class="serve_info_agile two">
+							<h4>IT Bangla Ltd</h4>
+							<p>ID Scholarship Program</p>
+						</div>
+					</div>
+						<div class="col-md-4 w3_agileits_services_bottom_l_grid">
+						<div class="agile_services_bottom_l_grid1">
+							<img src="static/images/a33.jpg" alt=" " class="img-responsive" />
+							<div class="w3_service_bottom_grid_pos">
+								<h3>Testing Center</h3>
+							</div>
+						</div>
+						<div class="serve_info_agile">
+							<h4>IT bangla Ltd</h4>
+							<p>International Testing Center</p>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+     
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+      <!-- Container Starts -->
+      <div class="container">
+        <h2 class="section-title">
+          Latest News & events
+        </h2>
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 blog-item">
+            <!-- Blog Item Starts -->
+            <div class="blog-item-wrapper">
+              <div class="blog-item-img">
+                <a href="single-post.html">
+                  <img src="static/assets/img/blog/home-items/img1.jpg" alt="">
+                </a>                
+              </div>
+              <div class="blog-item-text">
+                <div class="meta-tags">
+                  <span class="date"><i class="ti-calendar"></i> July, 2020</span>
+                  
+                </div>
+                <a href="single-post.html">
+                  <h3>
+                    {{news_title}}
+                  </h3>
+                </a>
+                <p>
+                 {{news_text}}
+                </p>
+                <a href="single-post.html" class="btn btn-common btn-rm">Read More</a>
+              </div>
+            </div>
+            <!-- Blog Item Wrapper Ends-->
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 blog-item">
+            <!-- Blog Item Starts -->
+            <div class="blog-item-wrapper">
+              <div class="blog-item-img">
+                <a href="single-post.html">
+                  <img src="static/assets/img/blog/home-items/img2.jpg" alt="">
+                </a>                
+              </div>
+              <div class="blog-item-text">
+                <div class="meta-tags">
+                  <span class="date"><i class="ti-calendar"></i> July, 2020</span>
+                  
+                </div>
+                <a href="single-post.html">
+                  <h3>
+                     {{news_title2}}
+                  </h3>
+                </a>
+                <p>
+               {{news_text2}}
+                </p>
+                <a href="single-post.html" class="btn btn-common btn-rm">Read More</a>
+              </div>
+            </div>
+            <!-- Blog Item Wrapper Ends-->
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 blog-item">
+            <!-- Blog Item Starts -->
+            <div class="blog-item-wrapper">
+              <div class="blog-item-img">
+                <a href="single-post.html">
+                  <img src="static/assets/img/blog/home-items/img3.jpg" alt="">
+                </a>                
+              </div>
+              <div class="blog-item-text">
+                <div class="meta-tags">
+                  <span class="date"><i class="ti-calendar"></i> July, 2020</span>
+                  
+                </div>
+                <a href="single-post.html">
+                  <h3>
+                   {{news_title3}}
+                  </h3>
+                </a>
+                <p>
+               {{news_text3}}
+                </p>
+                <a href="single-post.html" class="btn btn-common btn-rm">Read More</a>
+              </div>
+            </div>
+            <!-- Blog Item Wrapper Ends-->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- blog Section End -->
+
+		<!-- testimonials -->
+	<div class="testimonials">
+		<div class="container">
+			<h3 class="title-w3-agileits two">Business Partners</h3>
+			<p class="quia">International Brand</p>
+			<div class="w3_testimonials_grids">
+				<section class="slider">
+					<div class="flexslider">
+						<ul class="slides">
+							<li>
+								<div class="w3_testimonials_grid">
+									<img src="static/images/redhat.jpg" alt=" " class="img-responsive" />
+									<h4><i class="fa fa-quote-left" aria-hidden="true"></i> <i>Redhat Linux</i></h4>
+									<h5>Training Partner</h5>
+
+								</div>
+							</li>
+							<li>
+								<div class="w3_testimonials_grid">
+									<img src="static/images/oracle.jpg" alt=" " class="img-responsive" />
+									<h4><i class="fa fa-quote-left" aria-hidden="true"></i> <i>Oracle Corporation</i></h4>
+									<h5>Training Partner</h5>
+
+								</div>
+							</li>
+							<li>
+								<div class="w3_testimonials_grid">
+									<img src="static/images/pearson.png" alt=" " class="img-responsive" />
+									<h4><i class="fa fa-quote-left" aria-hidden="true"></i> <i>Pearson Education</i></h4>
+									<h5>Training Partner</h5>
+
+								</div>
+							</li>
+							<li>
+								<div class="w3_testimonials_grid">
+									<img src="static/images/prometric.jpg" alt=" " class="img-responsive" />
+									<h4><i class="fa fa-quote-left" aria-hidden="true"></i> <i>prometric Test Center</i></h4>
+									<h5>Training Partner</h5>
+
+								</div>
+							</li>
+							<li>
+								<div class="w3_testimonials_grid">
+									<img src="static/images/Pearson-Vue.jpg" alt=" " class="img-responsive" />
+									<h4><i class="fa fa-quote-left" aria-hidden="true"></i> <i>Pearson vue test center</i></h4>
+									<h5>Training Partner</h5>
+
+								</div>
+							</li>
+
+						</ul>
+					</div>
+				</section>
+
+			</div>
+		</div>
+	</div>
+	<!-- //testimonials -->
+	<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="col-md-3 w3agile_footer_grid">
+				<h3>About Us</h3>
+				<p>{{aboutus_text}}</p>
+
+			</div>
+			<div class="col-md-2 w3agile_footer_grid">
+				<h3>Links</h3>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About Us</a></li>
+					<li><a href="ta.html">Training Academy</a></li>
+					<li><a href="ta.html">Testing center</a></li>
+					<li><a href="ta.html">security Courses</a></li>
+					<li><a href="ta.html">Job placement</a></li>
+					<li><a href="ta.html">Careers</a></li>
+					<li><a href="contact.html">Contacts</a></li>
+
+				</ul>
+			</div>
+					
+		</div>
+	</div>
+	<div class="agileinfo_copy_right">
+		<div class="container">
+			<div class="agileinfo_copy_right_left">
+				<p>© 2020 All rights reserved </p>
+			</div>
+			<div class="agileinfo_copy_right_right">
+				<ul class="social">
+					<li><a class="social-linkedin" href="#">
+						<i class="fa fa-facebook" aria-hidden="true"></i>
+						<div class="tooltip"><span>Facebook</span></div>
+						</a></li>
+					<li><a class="social-twitter" href="#">
+						<i class="fa fa-twitter" aria-hidden="true"></i>
+						<div class="tooltip"><span>Twitter</span></div>
+						</a></li>
+					<li><a class="social-google" href="#">
+						<i class="fa fa-google" aria-hidden="true"></i>
+						<div class="tooltip"><span>Google+</span></div>
+						</a></li>
+					<li><a class="social-facebook" href="#">
+						<i class="fa fa-pinterest-p" aria-hidden="true"></i>
+						<div class="tooltip"><span>Pinterest</span></div>
+						</a></li>
+					<li><a class="social-instagram" href="#">
+						<i class="fa fa-instagram" aria-hidden="true"></i>
+						<div class="tooltip"><span>Instagram</span></div>
+						</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!-- //footer -->
+	<!-- js -->
+	<script type="text/javascript" src="static/js/jquery-2.1.4.min.js"></script>
+	<!-- //js -->
+	<script src="static/js/jquery.vide.min.js"></script>
+	<script src="static/js/responsiveslides.min.js"></script>
+	<script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+			// Slideshow 4
+			$("#slider4").responsiveSlides({
+				auto: true,
+				pager: true,
+				nav: false,
+				speed: 500,
+				namespace: "callbacks",
+				before: function () {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.events').append("<li>after event fired.</li>");
+				}
+			});
+
+		});
+	</script>
+
+	<!-- Stats-Number-Scroller-Animation-JavaScript -->
+	<script src="static/js/waypoints.min.js"></script>
+	<script src="static/js/counterup.min.js"></script>
+	<script>
+		jQuery(document).ready(function ($) {
+			$('.counter').counterUp({
+				delay: 10,
+				time: 1000,
+			});
+		});
+	</script>
+	<!-- //Stats-Number-Scroller-Animation-JavaScript -->
+
+	<!-- flexSlider -->
+	<link rel="stylesheet" href="static/css/flexslider.css" type="text/css" media="screen" property="" />
+	<script defer src="static/js/jquery.flexslider.js"></script>
+	<script type="text/javascript">
+		$(window).load(function () {
+			$('.flexslider').flexslider({
+				animation: "slide",
+				start: function (slider) {
+					$('body').removeClass('loading');
+				}
+			});
+		});
+	</script>
+	<!-- //flexSlider -->
+	<!-- //load-more -->
+	<!-- for bootstrap working -->
+	<script src="static/js/bootstrap.js"></script>
+	<!-- //for bootstrap working -->
+</body>
+
+</html>

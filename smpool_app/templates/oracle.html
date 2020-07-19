@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	{% extends 'base.html' %}
+
+    {%block title%}
+        <title> contact us </title>
+    {%endblock title%}
+</head>
+<body>
+    {%block content%}
+        <h3>{{contact_title}} </h3>
+        <pre>
+            <p>{{contact_text}}</p>
+        </pre>
+        <h3>{{contact_title2}}</h3>
+
+        <pre>
+            <p>{{contact_text2}}</p>
+        </pre>
+        <h3>{{contact_title3}}</h3>
+
+        <pre>
+            <p class="h5">{{contact_text3}}</p>
+        </pre>
+
+        <table class="table table-bordered table-hover">
+            <thead>
+    
+                <tr class="h4">
+                <th scope="col">Course Name</th>
+                <th scope="col">Module Name</th>
+                <th scope="col">Course DUration</th>
+                <th scope="col">Course Fees</th>
+                </tr>
+            </thead>
+<tbody>
+            {% for obj in ocourse %}
+                <tr class="h5">
+                <th scope="row">{{obj.course_name}}</th>
+                <td><b>{{obj.module_name}}</b></td>
+                <td>{{obj.course_duration}}</td>
+                <td>{{obj.course_fees}}</td>
+                </tr>
+            {%endfor%}
+</tbody>
+</table>
+            <h3>{{contact_title2}}</h3>
+            <pre>
+                 <p>{{contact_text2}}</p>
+            </pre>
+{%endblock content%}
+</body>
+
+</html>

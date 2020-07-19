@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	{% extends 'base.html' %}
+
+    {%block title%}
+        <title> Redhat </title>
+    {%endblock title%}
+</head>
+<body>
+    {%block content%}
+       
+       
+       {% for obj in rh %}
+               <h3>{{obj.body_title}} </h3>
+        <pre>
+            <p>{{obj.body_area}}</p>
+        </pre>
+
+     
+        {%endfor%}
+
+        
+
+    {%endblock content%}
+</body>
+
+</html>
