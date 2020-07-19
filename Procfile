@@ -1,1 +1,1 @@
-web: gunicorn smpool_app.wsgi
+web: gunicorn f2a.wsgi
