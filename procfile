@@ -1,0 +1,1 @@
+web: gunicorn smpool_app.wsgi
