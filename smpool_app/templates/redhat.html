@@ -2,26 +2,131 @@
 <html lang="en">
   <head>
 	{% extends 'base.html' %}
-
     {%block title%}
-        <title> Redhat </title>
+        <title> Redhat Training</title>
     {%endblock title%}
 </head>
 <body>
     {%block content%}
        
-       
-       {% for obj in rh %}
-               <h3>{{obj.body_title}} </h3>
-        <pre>
-            <p>{{obj.body_area}}</p>
-        </pre>
-
+        {% for obj in rh %}
+           <pre> <h3>{{obj.body_title}} </h3> </pre>
+<pre>
+    {% if obj.body_area == 'course1' %}
+    <table class="table table-bordered table-hover">
+            <thead>
+                <tr class="h4">
+                <th scope="col">Course Name</th>
+                <th scope="col">Module Name</th>
+                <th scope="col">Course Duration</th>
+                <th scope="col">Course Fees</th>
+                </tr>
+            </thead>
+        <tbody>
+            {% for cobj in redhatcourse1 %}
+                <tr class="h5">
+                <th scope="row">{{cobj.course_name}}</th>
+                <td><b>{{cobj.module_name}}</b></td>
+                <td>{{cobj.course_duration}}</td>
+                <td>{{cobj.course_fees}}</td>
+                </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    
+     {% elif obj.body_area == 'course2' %}
+    <table class="table table-bordered table-hover">
+            <thead>
+                <tr class="h4">
+                <th scope="col">Course Name</th>
+                <th scope="col">Module Name</th>
+                <th scope="col">Course Duration</th>
+                <th scope="col">Course Fees</th>
+                </tr>
+            </thead>
+        <tbody>
+            {% for cobj in redhatcourse2 %}
+                <tr class="h5">
+                <th scope="row">{{cobj.course_name}}</th>
+                <td><b>{{cobj.module_name}}</b></td>
+                <td>{{cobj.course_duration}}</td>
+                <td>{{cobj.course_fees}}</td>
+                </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    {% elif obj.body_area == 'class1' %}
+     <h5>{{obj.body_subtitle}} </h5>
+    <table class="table table-bordered table-hover">
+            <thead>
+                <tr class="h4">
+                <th scope="col">Course Code</th>
+                <th scope="col">Batch No</th>
+                <th scope="col">Class Start Date</th>
+                <th scope="col">Class Day </th>
+                <th scope="col">Class Time</th>
+                </tr>
+            </thead>
+        <tbody>
+            {% for cobj in redhatclass1 %}
+                <tr class="h5">
+                <th scope="row">{{cobj.class_code}}</th>
+                <td><b>{{cobj.batch_no}}</b></td>
+                <td>{{cobj.class_start_date}}</td>
+                <td>{{cobj.class_day}}</td>
+                <td>{{cobj.class_time}}</td>
+                </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    {% elif obj.body_area == 'class2' %}
+     <h5>{{obj.body_subtitle}} </h5>
+    <table class="table table-bordered table-hover">
+            <thead>
+                <tr class="h4">
+                <th scope="col">Course Code</th>
+                <th scope="col">Batch No</th>
+                <th scope="col">Class Start Date</th>
+                <th scope="col">Class Day </th>
+                <th scope="col">Class Time</th>
+                </tr>
+            </thead>
+        <tbody>
+            {% for cobj in redhatclass2 %}
+                <tr class="h5">
+                <th scope="row">{{cobj.class_code}}</th>
+                <td><b>{{cobj.batch_no}}</b></td>
+                <td>{{cobj.class_start_date}}</td>
+                <td>{{cobj.class_day}}</td>
+                <td>{{cobj.class_time}}</td>
+                </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    {% elif obj.body_area == 'exam1' %}
      
-        {%endfor%}
-
-        
-
+    <table class="table table-bordered table-hover">
+            <thead>
+                <tr class="h4">
+                <th scope="col">Exam Name</th>
+                <th scope="col">Exam fees</th>
+                </tr>
+            </thead>
+        <tbody>
+            {% for cobj in redhatexam1 %}
+                <tr class="h5">
+                <th scope="row">{{cobj.exam_name}}</th>
+                <td><b>{{cobj.exam_fees}}</b></td>
+                </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    
+    {%else%}
+        <p>{{obj.body_area}}</p>
+    {%endif%}
+</pre>
+{%endfor%}
     {%endblock content%}
 </body>
 

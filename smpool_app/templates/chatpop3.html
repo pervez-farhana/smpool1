@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    {%block title%}
+        <title> chat us </title>
+    {%endblock title%}
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Need to add later" />
+
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //custom-theme -->
+	<link href="static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- //custom-theme -->
+	<!-- font-awesome-icons -->
+	<link href="static/css/font-awesome.css" rel="stylesheet">
+	<!-- //font-awesome-icons -->
+	<link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Montserrat:200,200i,300,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+<!-- added from job site -->
+    <link rel="shortcut icon" href="static/assets/img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <!--
+		<link rel="stylesheet" href="static/assets/css/bootstrap.min.css" type="text/css">    
+    <link rel="stylesheet" href="static/assets/css/jasny-bootstrap.min.css" type="text/css">  
+    <link rel="stylesheet" href="static/assets/css/bootstrap-select.min.css" type="text/css">  
+	-->
+	<!-- Material CSS 
+    <link rel="stylesheet" href="static/assets/css/material-kit.css" type="text/css">
+	-->
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="static/assets/fonts/font-awesome.min.css" type="text/css"> 
+    <link rel="stylesheet" href="static/assets/fonts/themify-icons.css"> 
+
+    <!-- Animate CSS 
+    <link rel="stylesheet" href="static/assets/extras/animate.css" type="text/css">
+	-->
+    <!-- Owl Carousel 
+    <link rel="stylesheet" href="static/assets/extras/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="static/assets/extras/owl.theme.css" type="text/css">
+-->
+    <!-- Rev Slider CSS 
+    <link rel="stylesheet" href="static/assets/extras/settings.css" type="text/css"> 
+	-->
+    <!-- Slicknav js -->
+    <link rel="stylesheet" href="static/assets/css/slicknav.css" type="text/css">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="static/assets/css/main.css" type="text/css">
+    <!-- Responsive CSS Styles -->
+    <link rel="stylesheet" href="static/assets/css/responsive.css" type="text/css">
+	
+<link rel="stylesheet" href="static/css/marquee_styles.css" >
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="static/assets/css/colors/red.css" media="screen" />
+   
+</head>
+<body>
+ {%block content%}
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+<div class="modal fade" id="myModal" style="display: none;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+  {%endblock content%}
+ 
+
+	<!-- //js -->
+	<script src="static/js/jquery.vide.min.js"></script>
+	<script src="static/js/responsiveslides.min.js"></script>
+	<script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+			// Slideshow 4
+			$("#slider4").responsiveSlides({
+				auto: true,
+				pager: true,
+				nav: false,
+				speed: 500,
+				namespace: "callbacks",
+				before: function () {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.events').append("<li>after event fired.</li>");
+				}
+			});
+
+		});
+	</script>
+
+	<!-- Stats-Number-Scroller-Animation-JavaScript -->
+	<script src="static/js/waypoints.min.js"></script>
+	<script src="static/js/counterup.min.js"></script>
+	<script>
+		jQuery(document).ready(function ($) {
+			$('.counter').counterUp({
+				delay: 10,
+				time: 1000,
+			});
+		});
+	</script>
+	<!-- //Stats-Number-Scroller-Animation-JavaScript -->
+
+	<!-- flexSlider -->
+
+	<!-- //flexSlider -->
+	<!-- //load-more -->
+	<!-- for bootstrap working -->
+	<script src="static/js/bootstrap.js"></script>
+	<!-- //for bootstrap working -->
+ <script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+		 $(document).ready(function(){
+			// 	$('div#loading').removeAttr('id');
+			setTimeout(function(){
+$('#myModal').css('display','block'); },5000);
+		 });
+
+	</script>
+
+
+
+</body>
+
+</html>

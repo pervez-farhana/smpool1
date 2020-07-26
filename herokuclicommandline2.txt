@@ -1,0 +1,60 @@
+https://www.dropbox.com/s/l7vlsrrwki4vkfv/latest.dump?dl=0
+https://www.dropbox.com/s/l7vlsrrwki4vkfv/latest.dump?dl=0
+
+heroku pg:backups:restore DATABASE "https://dl.dropboxusercontent.com/s/l7vlsrrwki4vkfv/latest.dump" --confirm itbanglaapp2020
+
+heroku pg:backups:restore "https://dl.dropboxusercontent.com/s/l7vlsrrwki4vkfv/latest.dump" DATABASE_URL
+
+pg:backups:restore
+
+https://www.dropbox.com/s/qoofoc98jdc61aa/menudata.csv?dl=0
+
+
+heroku pg:backups:restore "https://dl.dropboxusercontent.com/s/qoofoc98jdc61aa/menudata.csv" DATABASE_URL
+
+https://www.dropbox.com/s/ti8hzjslgybwsaz/contentdata.csv?dl=0
+
+heroku pg:backups:restore "https://dl.dropboxusercontent.com/s/ti8hzjslgybwsaz/contentdata.csv" DATABASE_URL
+
+https://www.dropbox.com/s/vk8otmsgu0ute11/websitecontent.csv?dl=0
+heroku pg:backups:restore "https://dl.dropboxusercontent.com/s/vk8otmsgu0ute11/websitecontent.csv" DATABASE_URL
+
+https://www.dropbox.com/s/v0e605rmu5f5aex/content.csv?dl=0
+heroku pg:backups:restore "https://dl.dropboxusercontent.com/s/v0e605rmu5f5aex/content.csv" DATABASE_URL
+
+
+https://www.dropbox.com/s/wm2admmbvizhvto/dbname.sql?dl=0
+
+heroku pg:backups:restore "https://dl.dropboxusercontent.com/s/wm2admmbvizhvto/dbname.sql" DATABASE_URL
+
+heroku run bash
+
+heroku config:get DATABASE_URL -a itbanglaapp2020
+
+postgres://sglvpmhqzqzfih:7a6b1a5e4292398eec8fb3506fd33c64e9c037403524f74d65b0e06e1b4433df@ec2-54-159-138-67.compute-1.amazonaws.com:5432/dc9e9gpu74lbne
+
+postgres://sglvpmhqzqzfih:7a6b1a5e4292398eec8fb3506fd33c64e9c037403524f74d65b0e06e1b4433df@ec2-54-159-138-67.compute-1.amazonaws.com:5432/dc9e9gpu74lbne
+
+172.223.71.43
+
+Host
+ec2-54-159-138-67.compute-1.amazonaws.com
+Database
+dc9e9gpu74lbne
+User
+sglvpmhqzqzfih
+Port
+5432
+Password
+7a6b1a5e4292398eec8fb3506fd33c64e9c037403524f74d65b0e06e1b4433df
+URI
+postgres://sglvpmhqzqzfih:7a6b1a5e4292398eec8fb3506fd33c64e9c037403524f74d65b0e06e1b4433df@ec2-54-159-138-67.compute-1.amazonaws.com:5432/dc9e9gpu74lbne
+Heroku CLI
+heroku pg:psql postgresql-clear-93634 --app itbanglaapp2020
+
+
+image =models.ImageField(upload_to='images/')\
+username : postgres
+password : Zaya2020!
+
+           

@@ -4,7 +4,7 @@
 
 <head>
 	{% block title%}
-	<title> Swimming pool Service Company </title>
+	<title> IT Bangla Limited </title>
 	{% endblock title%}
 	
 	<!-- custom-theme -->
@@ -82,7 +82,7 @@
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
 								</button>
-							<h1><a class="navbar-brand" href="/"><span>ITB</span>IT Bangla</a></h1>
+							<h1><a class="navbar-brand" href=""><span>ITB</span>IT Bangla</a></h1>
 						</div>
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
@@ -497,7 +497,39 @@
       </div>
     </section>
     <!-- blog Section End -->
+	<!-- modal pop up screen -->
+<button type="button" id= "myBtn" class="btn btn-primary" data-toggle="modal" data-target="#chatModal" data-whatever="@mdo">chat</button>
 
+  <div class="modal fade" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">It Bnagla Ltd</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="background-image: url(/static/images/1.jpg);">
+	  <br>
+	  <br>
+	  <br>
+  <h3> Are you interested to get a training in oracle</h3>
+  <br>
+  <p>Please click the link-------> <a href="oracle.html">ORACLE</a></p>
+  
+
+  <br>
+  <br>
+  <hr>
+  </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
 		<!-- testimonials -->
 	<div class="testimonials">
 		<div class="container">
@@ -671,6 +703,22 @@
 	<!-- for bootstrap working -->
 	<script src="static/js/bootstrap.js"></script>
 	<!-- //for bootstrap working -->
+
+
+	 <script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script>
+document.getElementById("myBtn").style.visibility = "hidden";
+$(document).ready(function()
+{
+    var refreshId = setInterval( function() 
+    {
+        $('#myBtn').click();
+    }, 15000);
+});
+
+	</script>
+
 </body>
 
 </html>

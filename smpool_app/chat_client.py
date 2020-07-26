@@ -1,82 +1,75 @@
-import socket
-import select
-import errno
+from socket import AF_INET, socket, SOCK_STREAM
+from threading import Thread, Lock
+import time
 
-HEADER_LENGTH = 10
 
-IP = "127.0.0.1"
-PORT = 1234
-my_username = input("Username: ")
+class Client:
+    """
+    for communication with server
+    """
+    HOST = "192.168.0.21"
+    PORT = 5500
+    ADDR = (HOST, PORT)
+    BUFSIZ = 512
 
-# Create a socket
-# socket.AF_INET - address family, IPv4, some otehr possible are AF_INET6, AF_BLUETOOTH, AF_UNIX
-# socket.SOCK_STREAM - TCP, conection-based, socket.SOCK_DGRAM - UDP, connectionless, datagrams, socket.SOCK_RAW - raw IP packets
-client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    def __init__(self, name):
+        """
+        Init object and send name to server
+        :param name: str
+        """
+        self.client_socket = socket(AF_INET, SOCK_STREAM)
+        self.client_socket.connect(self.ADDR)
+        self.messages = []
+        receive_thread = Thread(target=self.receive_messages)
+        receive_thread.start()
+        self.send_message(name)
+        self.lock = Lock()
 
-# Connect to a given ip and port
-client_socket.connect((IP, PORT))
-
-# Set connection to non-blocking state, so .recv() call won;t block, just return some exception we'll handle
-client_socket.setblocking(False)
-
-# Prepare username and header and send them
-# We need to encode username to bytes, then count number of bytes and prepare header of fixed size, that we encode to bytes as well
-username = my_username.encode('utf-8')
-username_header = f"{len(username):<{HEADER_LENGTH}}".encode('utf-8')
-client_socket.send(username_header + username)
-
-while True:
-
-    # Wait for user to input a message
-    message = input(f'{my_username} > ')
-
-    # If message is not empty - send it
-    if message:
-
-        # Encode message to bytes, prepare header and convert to bytes, like for username above, then send
-        message = message.encode('utf-8')
-        message_header = f"{len(message):<{HEADER_LENGTH}}".encode('utf-8')
-        client_socket.send(message_header + message)
-
-    try:
-        # Now we want to loop over received messages (there might be more than one) and print them
+    def receive_messages(self):
+        """
+        receive messages from server
+        :return: None
+        """
         while True:
+            try:
+                msg = self.client_socket.recv(self.BUFSIZ).decode()
 
-            # Receive our "header" containing username length, it's size is defined and constant
-            username_header = client_socket.recv(HEADER_LENGTH)
+                # make sure memory is safe to access
+                self.lock.acquire()
+                self.messages.append(msg)
+                self.lock.release()
+            except Exception as e:
+                print("[EXCPETION]", e)
+                break
 
-            # If we received no data, server gracefully closed a connection, for example using socket.close() or socket.shutdown(socket.SHUT_RDWR)
-            if not len(username_header):
-                print('Connection closed by the server')
-                sys.exit()
+    def send_message(self, msg):
+        """
+        send messages to server
+        :param msg: str
+        :return: None
+        """
+        try:
+            self.client_socket.send(bytes(msg, "utf8"))
+            if msg == "{quit}":
+                self.client_socket.close()
+        except Exception as e:
+            self.client_socket = socket(AF_INET, SOCK_STREAM)
+            self.client_socket.connect(self.ADDR)
+            print(e)
 
-            # Convert header to int value
-            username_length = int(username_header.decode('utf-8').strip())
+    def get_messages(self):
+        """
+        :returns a list of str messages
+        :return: list[str]
+        """
+        messages_copy = self.messages[:]
 
-            # Receive and decode username
-            username = client_socket.recv(username_length).decode('utf-8')
+        # make sure memory is safe to access
+        self.lock.acquire()
+        self.messages = []
+        self.lock.release()
 
-            # Now do the same for message (as we received username, we received whole message, there's no need to check if it has any length)
-            message_header = client_socket.recv(HEADER_LENGTH)
-            message_length = int(message_header.decode('utf-8').strip())
-            message = client_socket.recv(message_length).decode('utf-8')
-
-            # Print message
-            print(f'{username} > {message}')
-
-    except IOError as e:
-        # This is normal on non blocking connections - when there are no incoming data error is going to be raised
-        # Some operating systems will indicate that using AGAIN, and some using WOULDBLOCK error code
-        # We are going to check for both - if one of them - that's expected, means no incoming data, continue as normal
-        # If we got different error code - something happened
-        if e.errno != errno.EAGAIN and e.errno != errno.EWOULDBLOCK:
-            print('Reading error: {}'.format(str(e)))
-            sys.exit()
-
-        # We just did not receive anything
-        continue
-
-    except Exception as e:
-        # Any other exception - something happened, exit
-        print('Reading error: '.format(str(e)))
-        sys.exit()
+        return messages_copy
+    
+    def disconnect(self):
+        self.send_message("{quit}")

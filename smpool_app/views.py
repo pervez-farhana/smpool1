@@ -133,22 +133,36 @@ def contact(request):
 ################## CCNA #########################
 
 def ccna(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'ccna')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -170,27 +184,36 @@ def ccna(request):
 #####################MCSE########################
     
 def mcse(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'mcse1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'mcse2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
-    ctext3 =website_content_info.objects.filter(body_pos = 'mcse3')
-    for ccon in ctext3:
-        contact_text3=ccon.body_area
-        contact_title3=ccon.body_title
-        context['contact_text3']= contact_text3
-        context['contact_title3']= contact_title3
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'mcse')
+    
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -208,25 +231,38 @@ def mcse(request):
     context['aumenu']=   aumenu
 
     return render(request,'mcse.html',context)
-
 #####################MCSE########################
 def web_development(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'web_development')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -246,22 +282,36 @@ def web_development(request):
     return render(request,'web_development.html',context)
 #####################usajob########################
 def usajob(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'usajob')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -279,26 +329,39 @@ def usajob(request):
     context['aumenu']=   aumenu
 
     return render(request,'usajob.html',context)
-
-
+    
 #####################toefl########################
 def toefl(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'toefl')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -316,25 +379,38 @@ def toefl(request):
     context['aumenu']=   aumenu
 
     return render(request,'toefl.html',context)
-
 #####################testing_redhat########################
 def testing_redhat(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'testing_redhat')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -355,22 +431,36 @@ def testing_redhat(request):
 #####################rhcss########################
 
 def rhcss(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'rhcss')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -388,16 +478,39 @@ def rhcss(request):
     context['aumenu']=   aumenu
 
     return render(request,'rhcss.html',context)
-
 #####################redhat########################
 
 def redhat(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
+    context = {'slide1_text': "Swimming to contact",  }
     rh= website_content_info.objects.filter(body_pos__contains = 'redhat')
-    context['rh']=   rh
-
+    
+    for crh in rh:
+        bda =crh.body_area
+        bid=crh.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
         
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['rh']=   rh
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -446,22 +559,36 @@ def chatpop(request):
 
 
 def pte(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'pte')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -482,22 +609,36 @@ def pte(request):
 #####################pms########################
 
 def pms(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'pms')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -516,25 +657,38 @@ def pms(request):
 
     return render(request,'pms.html',context)
 
-
 #####################pearsonvue########################
 def pearsonvue(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'pearsonvue')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -552,30 +706,45 @@ def pearsonvue(request):
     context['aumenu']=   aumenu
 
     return render(request,'pearsonvue.html',context)
-
 #####################oracle########################
 
 def oracle(request):
-    context = {'slide1_text': "Swimming to contact",  }
-    contacttext =website_content_info.objects.filter(body_pos = 'oracle1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
 
-    ctext2 =website_content_info.objects.filter(body_pos = 'oracle2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
-    ctext3 =website_content_info.objects.filter(body_pos = 'oracle3')
-    for ccon in ctext3:
-        contact_text3=ccon.body_area
-        contact_title3=ccon.body_title
-        context['contact_text3']= contact_text3
-        context['contact_title3']= contact_title3
+    context = {'slide1_text': "Swimming to contact",  }
+    rh= website_content_info.objects.filter(body_pos__contains = 'oracle')
+    
+    for crh in rh:
+        bda =crh.body_page
+        bid=crh.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        
+        elif bda == "course":
+            ocourse =course_info.objects.filter(bodyid_id = bid)
+            context['ocourse']=   ocourse
+        
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['rh']=   rh
+    
     
     ocourse =course_info.objects.filter(course_code = 'How can be a good DBA?')
     context['ocourse']=   ocourse
@@ -599,22 +768,36 @@ def oracle(request):
     return render(request,'oracle.html',context)
 #####################lms########################
 def lms(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'lms')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -633,25 +816,38 @@ def lms(request):
 
     return render(request,'lms.html',context)
 
-
 #####################javase8########################
 def javase8(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'javase8')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -671,26 +867,39 @@ def javase8(request):
     return render(request,'javase8.html',context)
 
 
-
 #####################industrial_training########################
 
 def industrial_training(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'industrial_training')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -708,26 +917,39 @@ def industrial_training(request):
     context['aumenu']=   aumenu
 
     return render(request,'industrial_training.html',context)
-
 #####################hrms########################
 
 def hrms(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'hrms')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -749,22 +971,36 @@ def hrms(request):
 #####################goals########################
 
 def goals(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    gls= website_content_info.objects.filter(body_pos__contains = 'goals')
     
+    for cgls in gls:
+        bda =cgls.body_area
+        bid=cgls.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['gls']=   gls
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -782,26 +1018,39 @@ def goals(request):
     context['aumenu']=   aumenu
 
     return render(request,'goals.html',context)
-
 #####################gmat########################
 
 def gmat(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'gmat')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -823,22 +1072,36 @@ def gmat(request):
 #####################frelancer########################
 
 def frelancer(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'frelancer')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -857,25 +1120,38 @@ def frelancer(request):
 
     return render(request,'frelancer.html',context)
 
-
 #####################directors########################
 def directors(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'directors')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -895,23 +1171,39 @@ def directors(request):
     return render(request,'directors.html',context)
 
 #####################corporate_profile########################
-def corporate_profile(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
 
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+
+def corporate_profile(request):
+    context = {'slide1_text': "Swimming to contact",  }
+    corp= website_content_info.objects.filter(body_pos__contains = 'corporate_profile')
     
+    for ccorp in corp:
+        bda =ccorp.body_area
+        bid=ccorp.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['corp']=   corp
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -930,25 +1222,38 @@ def corporate_profile(request):
 
     return render(request,'corporate_profile.html',context)
 
-
 #####################clients########################
 def clients(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'clients')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -967,30 +1272,87 @@ def clients(request):
 
     return render(request,'clients.html',context)
 
+#####################ged########################
+def ged(request):
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'ged')
+    
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
+    tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
+    context['tamenu']=   tamenu
 
+    tcmenu = menu_info.objects.filter(menu_name__contains = 'Testing Center')
+    context['tcmenu']=   tcmenu
+
+    smenu = menu_info.objects.filter(menu_name__contains = 'Software')
+    context['smenu']=   smenu
+    scmenu = menu_info.objects.filter(menu_name__contains = 'Secuirty Course')
+    context['scmenu']=   scmenu
+
+    jpmenu = menu_info.objects.filter(menu_name__contains = 'Job Placement')
+    context['jpmenu']=   jpmenu
+    aumenu = menu_info.objects.filter(menu_name__contains = 'About US')
+    context['aumenu']=   aumenu
+
+    return render(request,'ged.html',context)
 #####################cisa#############################################MCSE########################
 def cisa(request):
-    context = {'slide1_text': "Swimming pool company3333333333333333333",
-                }
-    cisatext =website_content_info.objects.filter(body_pos = 'cisa1')
-    for ccon in cisatext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'cisa2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
-    ctext3 =website_content_info.objects.filter(body_pos = 'cisa3')
-    for ccon in ctext3:
-        contact_text3=ccon.body_area
-        contact_title3=ccon.body_title
-        context['contact_text3']= contact_text3
-        context['contact_title3']= contact_title3
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'cisa')
+    
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -1014,22 +1376,36 @@ def cisa(request):
 #####################certificate_awards#############################################MCSE########################
 
 def certificate_awards(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'certificate_awards')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -1047,25 +1423,41 @@ def certificate_awards(request):
     context['aumenu']=   aumenu
 
     return render(request,'certificate_awards.html',context)
-#####################ceh########################
+    
+    
+    #####################ceh########################
 
 def ceh(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'ceh')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -1083,25 +1475,41 @@ def ceh(request):
     context['aumenu']=   aumenu
 
     return render(request,'ceh.html',context)
-#####################MCcdcsSE########################
+    
+    
+    #####################MCcdcsSE########################
 
 def cdcs(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'cdcs')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -1119,29 +1527,42 @@ def cdcs(request):
     context['aumenu']=   aumenu
 
     return render(request,'cdcs.html',context)
+
+
+
 #####################career########################
 
 def career(request):
     context = {'slide1_text': "Swimming to contact",  }
-    careertext =website_content_info.objects.filter(body_pos = 'career1')
-    for ccon in careertext:
-        career_text=ccon.body_area
-        career_title=ccon.body_title
-        context['career_text']= career_text
-        context['career_title']= career_title
-
-    careertext2 =website_content_info.objects.filter(body_pos = 'career2')
-    for ccon in careertext2:
-        career_text2=ccon.body_area
-        career_title2=ccon.body_title
-        context['career_text2']= career_text2
-        context['career_title2']= career_title2
-    careertext3 =website_content_info.objects.filter(body_pos = 'career3')
-    for ccon in careertext3:
-        career_text3=ccon.body_area
-        career_title3=ccon.body_title
-        context['career_text3']= career_text3
-        context['career_title3']= career_title3
+    bzf= website_content_info.objects.filter(body_pos__contains = 'career')
+    
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -1159,26 +1580,42 @@ def career(request):
     context['aumenu']=   aumenu
 
     return render(request,'career.html',context)
-#####################MCSE########################
+
+
+
 #####################business_focus########################
 
 def business_focus(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'business_focus')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -1200,22 +1637,36 @@ def business_focus(request):
     #####################bcat########################
 
 def bcat(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'bcat')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -1237,22 +1688,36 @@ def bcat(request):
     #####################aspnet########################
 
 def aspnet(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'aspnet')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -1271,26 +1736,39 @@ def aspnet(request):
 
     return render(request,'aspnet.html',context)
 
-
  #####################ams########################
 
 def ams(request):
-    context = {'slide1_text': "Swimming to contact",
-                }
-    contacttext =website_content_info.objects.filter(body_pos = 'c1')
-    for ccon in contacttext:
-        contact_text=ccon.body_area
-        contact_title=ccon.body_title
-        context['contact_text']= contact_text
-        context['contact_title']= contact_title
-
-    ctext2 =website_content_info.objects.filter(body_pos = 'c2')
-    for ccon in ctext2:
-        contact_text2=ccon.body_area
-        contact_title2=ccon.body_title
-        context['contact_text2']= contact_text2
-        context['contact_title2']= contact_title2
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'ams')
     
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
     tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
     context['tamenu']=   tamenu
 
@@ -1309,9 +1787,11 @@ def ams(request):
 
     return render(request,'ams.html',context)
 
-
-
-
+#####################others########################
+def marquee(request):
+    context = {'about_text': "welcome to about",
+                }
+    return render(request,'marquee.html',context) 
 
 def about(request):
     context = {'about_text': "welcome to about",
@@ -1350,7 +1830,7 @@ def index(request):
         context['welcome_text']= welcome_text
     cptext =website_content_info.objects.filter(body_pos = 'aboutus_text')
     for ccon in cptext:
-        aboutus_text=ccon.body_text
+        aboutus_text=ccon.body_area
         context['aboutus_text']= aboutus_text
     nwstext =website_content_info.objects.filter(body_pos = 'news1')
     for ccon in nwstext:

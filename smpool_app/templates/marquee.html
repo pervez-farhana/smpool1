@@ -1,0 +1,42 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    	{% extends 'base.html' %}
+
+  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity ="sha384-oS3vJWv+0U">
+<!-- marquee CSS Styles -->
+    <link rel="stylesheet" href="static/css/marquee_styles.css" >
+  
+
+    {%block title%}
+        <title> marquee </title>
+    {%endblock title%}
+    <script src="static/js/marquee_js.js" defer></script>
+
+</head>
+<body>
+    {%block content%}
+    <div class="marquee">
+    <ul class="marquee-content">
+      <li><img src= "static/images/1.jpg"></li>
+       <li><img src= "static/images/2.jpg"></li>
+        <li><img src= "static/images/3.jpg"></li>
+         <li><img src= "static/images/4.jpg"></li>
+          <li><img src= "static/images/5.jpg"></li>
+           <li><img src= "static/images/6.jpg"></li>
+            <li><img src= "static/images/7.jpg"></li>
+             <li><img src= "static/images/8.jpg"></li>
+
+    </ul>
+  </div>
+    {%endblock content%}
+</body>
+
+</html>
+
+
+
+
+
