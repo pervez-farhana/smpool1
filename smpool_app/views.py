@@ -1581,6 +1581,57 @@ def career(request):
 
     return render(request,'career.html',context)
 
+#####################career########################
+
+def gallery(request):
+    context = {'slide1_text': "Swimming to contact",  }
+    bzf= website_content_info.objects.filter(body_pos__contains = 'gallery')
+    
+    for cbzf in bzf:
+        bda =cbzf.body_area
+        bid=cbzf.id
+       
+        if bda == "course1":
+            redhatcourse1 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse1']=   redhatcourse1
+        elif bda == "course2":
+            redhatcourse2 =course_info.objects.filter(bodyid_id = bid)
+            context['redhatcourse2']=   redhatcourse2
+        
+        elif bda == "class1":
+            
+            redhatclass1 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass1']=   redhatclass1
+        elif bda == "class2":
+            
+            redhatclass2 =class_info.objects.filter(bodyid_id = bid)
+            context['redhatclass2']=   redhatclass2
+        elif bda == "exam1":
+            
+            redhatexam1 =course_exam_info.objects.filter(bodyid_id = bid)
+            context['redhatexam1']=   redhatexam1
+        
+        else:
+            context['bzf']=   bzf
+            
+    tamenu = menu_info.objects.filter(menu_name__contains = 'Training Academy')
+    context['tamenu']=   tamenu
+
+    tcmenu = menu_info.objects.filter(menu_name__contains = 'Testing Center')
+    context['tcmenu']=   tcmenu
+
+    smenu = menu_info.objects.filter(menu_name__contains = 'Software')
+    context['smenu']=   smenu
+    scmenu = menu_info.objects.filter(menu_name__contains = 'Secuirty Course')
+    context['scmenu']=   scmenu
+
+    jpmenu = menu_info.objects.filter(menu_name__contains = 'Job Placement')
+    context['jpmenu']=   jpmenu
+    aumenu = menu_info.objects.filter(menu_name__contains = 'About US')
+    context['aumenu']=   aumenu
+
+    return render(request,'gallery.html',context)
+
 
 
 #####################business_focus########################
